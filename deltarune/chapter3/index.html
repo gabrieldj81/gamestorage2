@@ -453,11 +453,29 @@
         originalLog.apply(console, args);
 
         const message = args.join(' ');
-        if (message.includes("I DONT KNOW HOW TO FIX VIDEOS ON GAMEMAKER")) {
-          alert("I DONT KNOW HOW TO FIX VIDEOS ON GAMEMAKER GXGAMES, LMK IF YOU KNOW. breadbb on discord");
+        if (message.includes("Videos dont work on gamemaker web export. - breadbb")) {
+          GM_pause();
+          const video = document.createElement("video");
+          video.src = "vid/tennaintroF1_compressed_28.mp4";
+          video.style.position = "absolute";
+          video.style.top = "0";
+          video.style.left = "0";
+          video.style.width = "100%";
+          video.style.height = "100%";
+          video.style.objectFit = "contain";
+          video.style.zIndex = "9999";
+          video.style.pointerEvents = "none";
+          video.autoplay = true;
+          video.controls = false;
+          video.muted = false;
+          video.playsInline = true;
+          document.body.appendChild(video);
+          video.addEventListener("ended", () => {
+            document.body.removeChild(video);
+            resume();
+          });
         }
       };
-
     </script>
   </body>
 </html>
