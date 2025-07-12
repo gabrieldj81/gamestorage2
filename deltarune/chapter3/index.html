@@ -457,7 +457,7 @@
         if (message.includes("Videos dont work on gamemaker web export. - breadbb")) {
           GM_pause();
           const video = document.createElement("video");
-          video.src = "vid/tennaintroF1_compressed_28.mp4";
+          video.src = "video.mp4";
           video.style.position = "absolute";
           video.style.top = "0";
           video.style.left = "0";
@@ -475,6 +475,7 @@
             document.body.removeChild(video);
             resume();
           });
+		  //alert("VHS Failed to play\n-Cake Logic");
         }
       };
     </script>
